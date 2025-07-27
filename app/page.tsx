@@ -42,73 +42,64 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section with Spline */}
-      <section id="home" className="relative min-h-screen h-[100vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-10"> 
-        <iframe src='https://my.spline.design/nexbotrobotcharacterconcept-eFJnFboDFyduaIiAmiINGbFQ/' frameborder='0' width='100%' height='100%'></iframe>
-        </div>
+      <section
+        id="home"
+        className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-gray-100 to-gray-200 dark:from-black dark:via-gray-900 dark:to-gray-800 overflow-hidden"
+      >
+        {/* Floating Cricket Elements */}
         <motion.div
-          className="relative z-20 text-center px-4"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.5 }}
-          >
-            <br />
-            <br />
+          className="absolute top-10 left-10 w-24 h-24 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full opacity-20 blur-lg"
+          animate={{ y: [0, -30, 0], rotate: [0, 180, 360] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute bottom-10 right-10 w-20 h-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full opacity-20 blur-lg"
+          animate={{ y: [0, 30, 0], rotate: [360, 180, 0] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {/* Glassmorphism Card */}
+        <div className="relative z-20 bg-white/60 dark:bg-black/60 backdrop-blur-xl rounded-3xl shadow-2xl p-10 flex flex-col items-center max-w-xl w-full mx-4 border border-gray-200 dark:border-gray-700">
+          <div className="w-full flex justify-center mb-6">
+            <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-300 dark:border-gray-700 w-72 h-56 bg-gray-100 dark:bg-gray-900">
+              <iframe
+                src="https://my.spline.design/nexbotrobotcharacterconcept-eFJnFboDFyduaIiAmiINGbFQ/"
+                frameBorder="0"
+                width="100%"
+                height="100%"
+                className="rounded-2xl"
+                title="3D Cricket Mascot"
+              />
+            </div>
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 text-gray-900 dark:text-white drop-shadow-lg">
+            Dream11 FantasyEdge
+          </h1>
+          <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 text-center">
+            Get AI-powered predictions and insights for your Dream11 fantasy cricket teams. Win smarter, play better!
+          </p>
+          <div className="flex gap-4 w-full justify-center">
             <motion.button
-              className="px-8 py-4 bg-gradient-to-r from-gray-800 to-gray-900 dark:from-cyan-500 dark:to-blue-500 text-white rounded-full font-bold text-lg hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-cyan-500/50 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              style={{ transform: "rotate(180deg)" }}
+              className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-full font-bold text-lg shadow-lg hover:scale-105 transition-transform"
+              whileHover={{ scale: 1.07 }}
+              whileTap={{ scale: 0.97 }}
             >
               Get Predictions
             </motion.button>
             <motion.button
-              className="px-8 py-4 border-2 border-gray-800 dark:border-yellow-400 text-gray-800 dark:text-yellow-400 rounded-full font-bold text-lg hover:bg-gray-800 hover:text-white dark:hover:bg-yellow-400 dark:hover:text-black transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 border-2 border-yellow-400 text-yellow-500 dark:text-yellow-400 rounded-full font-bold text-lg hover:bg-yellow-400 hover:text-black transition-all"
+              whileHover={{ scale: 1.07 }}
+              whileTap={{ scale: 0.97 }}
             >
               Learn More
             </motion.button>
-          </motion.div>
-        </motion.div>
-
-        {/* Floating Cricket Elements */}
-        <motion.div
-          className="absolute top-20 left-10 w-16 h-16 bg-gradient-to-r from-gray-400 to-gray-600 dark:from-yellow-400 dark:to-orange-500 rounded-full opacity-20"
-          animate={{
-            y: [0, -20, 0],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-10 w-12 h-12 bg-gradient-to-r from-gray-500 to-gray-700 dark:from-cyan-400 dark:to-blue-500 rounded-full opacity-20"
-          animate={{
-            y: [0, 20, 0],
-            rotate: [360, 180, 0],
-          }}
-          transition={{
-            duration: 3,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
-        />
+          </div>
+        </div>
       </section>
 
       <About />
       <Working />
-      <Builder />
+      {/* <Builder /> */}
       <UseCase />
       <WhyThis />
       <Contact />
